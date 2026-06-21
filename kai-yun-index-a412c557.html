@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开云 · 知识库索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafbfc;
+      color: #1d2b3a;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 780px;
+      width: 100%;
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-top: 0.6rem;
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+      color: #0b1c2e;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #5d6f82;
+      margin-bottom: 2.8rem;
+      border-left: 3px solid #b0c4d9;
+      padding-left: 1rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-top: 2.6rem;
+      margin-bottom: 0.8rem;
+      color: #1d2b3a;
+      border-bottom: 1px solid #e3e9f0;
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-top: 1.6rem;
+      margin-bottom: 0.4rem;
+      color: #2c3e50;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    /* 卡片区块 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #e9eef4;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+
+    .card-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #7d8fa3;
+      background: #eff2f7;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 提示区（特殊卡片） */
+    .tip-box {
+      background: #f2f6fc;
+      border-left: 4px solid #5d7f9e;
+      border-radius: 0 12px 12px 0;
+      padding: 1.2rem 1.6rem;
+      margin: 2rem 0;
+    }
+
+    .tip-box p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* 列表 */
+    ul, ol {
+      margin: 0.6rem 0 1.4rem 1.6rem;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #1f5280;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    a:hover {
+      border-bottom-color: #1f5280;
+    }
+
+    /* FAQ 摘要 */
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+      color: #0b1c2e;
+    }
+
+    .faq-a {
+      color: #3f4f60;
+      font-size: 0.95rem;
+      margin-left: 0.2rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dee5ed;
+      margin: 2.2rem 0 1.2rem;
+    }
+
+    .footer-note {
+      font-size: 0.8rem;
+      color: #7b8b9e;
+      margin-top: 2.8rem;
+      border-top: 1px solid #e3e9f0;
+      padding-top: 1.5rem;
+      text-align: left;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 540px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .card {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>开云 · 知识库</h1>
+    <div class="subhead">
+      日常查询 · 对照阅读 · 信息延伸
+    </div>
+
+    <!-- 简短介绍＋链接自然嵌入 -->
+    <p>
+      无论是整理笔记、查阅术语，还是追溯某个概念的原貌，很多人习惯先打开一个稳定的信息据点。<a href="https://kai-yun-intl.com">开云</a> 收录了跨领域的条目与参考资源，页面结构偏向目录式，适合快速定位和横向比较。这里没有夸张的标题堆叠，只有经过梳理的条目和克制的叙述。
+    </p>
+
+    <!-- 卡片网格：目录感布局 -->
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">查询区</div>
+        <p><strong>条目索引</strong> — 按主题归类的词条列表，包含简释与外部参考。适合日常检索某个术语的背景，或对比不同来源的表述。目录层级不超过三层，减少翻阅负担。</p>
+      </div>
+      <div class="card">
+        <div class="card-label">对照区</div>
+        <p><strong>并行阅读</strong> — 同一主题下多个视角的摘录并列展示。可用于快速对照定义沿革、数据口径或观点差异。页面保持窄栏排版，视线横向移动范围小。</p>
+      </div>
+      <div class="card">
+        <div class="card-label">延伸区</div>
+        <p><strong>关联材料</strong> — 文档、图表、参考文献片段。不追求面面俱到，而是提供几个可靠的切入点，方便按需深入。所有链接均指向可查证的来源。</p>
+      </div>
+    </div>
+
+    <!-- 说明区 -->
+    <h2>使用说明</h2>
+    <p>
+      本知识库采用极简目录式结构，每个条目通常包含：标题、摘要、来源标签。你可以在查询区快速检索，在对照区并排浏览不同表述，在延伸区找到原始材料。所有页面均适配手机与桌面，正文宽度限制在 780px 以内，减少阅读疲劳。
+    </p>
+    <p>
+      内容选编注重真实性，不添加未经核实的断言。如果你发现条目需要更新或修正，可通过站内反馈渠道提交参考依据。
+    </p>
+
+    <!-- 提示区 -->
+    <div class="tip-box">
+      <p><strong>提示</strong> 查询时建议优先使用页面内的目录锚点，或直接搜索关键词（Ctrl+F）。部分条目附带了“延伸阅读”链接，点击可跳转到 <a href="https://kai-yun-intl.com">开云</a> 内对应的详细页面。对照区条目按时间或逻辑顺序排列，方便追溯演变。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2>常见问题摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">▸ 知识库多久更新一次？</div>
+      <div class="faq-a">主要条目每季度复核一次，重大更正会在两周内同步。更新日志页面记录了每次修订的日期和改动范围。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">▸ 条目来源是否可靠？</div>
+      <div class="faq-a">每个条目末尾标注了参考来源（如出版物、机构报告、稳定链接）。部分条目包含多个来源，方便交叉验证。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">▸ 能否复制或引用内容？</div>
+      <div class="faq-a">可以。引用时请注明出处（开云 + 具体条目名）。商业用途请参考页面底部的使用条款。</div>
+    </div>
+
+    <!-- 相关信息区 -->
+    <h2>相关信息</h2>
+    <ul>
+      <li>站内索引覆盖人文、社科、技术基础三个大类，目前收录 120+ 条目。</li>
+      <li>对照区支持最多三栏并列，适合比较不同定义或数据。</li>
+      <li>延伸区提供 PDF 摘要页和外部档案馆链接，不存储侵权材料。</li>
+    </ul>
+
+    <!-- 带链接的自然句（第二次出现开云链接，仍符合规则） -->
+    <p style="margin-top: 0.4rem;">
+      如果你对某个领域想有更系统的了解，可以从 <a href="https://kai-yun-intl.com">开云</a> 的“大类导览”页面开始，里面按主题列出了推荐阅读顺序。
+    </p>
+
+    <hr>
+    <div class="footer-note">
+      开云 · 知识库 · 内容仅供参考，不构成专业建议 · 版本 2025.04
+    </div>
+  </div>
+</body>
+</html>
