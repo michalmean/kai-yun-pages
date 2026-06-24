@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再次遇见 · 爱游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fbe9e7 0%, #fce4ec 45%, #fff3e0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.2rem;
+            line-height: 1.7;
+            color: #2f2b2a;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 250, 245, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 48px 24px 48px 24px;
+            padding: 2.8rem 2.4rem 2.8rem 2.8rem;
+            box-shadow: 0 20px 40px -12px rgba(160, 100, 80, 0.15),
+                        0 8px 16px -6px rgba(180, 110, 80, 0.08);
+            border: 1px solid rgba(255, 235, 220, 0.6);
+            transition: box-shadow 0.25s ease;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 32px 16px 32px 16px;
+            }
+        }
+
+        .hero-line {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #4e3e3a;
+            background: linear-gradient(90deg, #b55f4a, #8d4e3e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+            border-left: 4px solid #d49a8a;
+            padding-left: 1.4rem;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            color: #7a6a64;
+            margin-bottom: 2rem;
+            padding-left: 1.4rem;
+            border-left: 4px solid #e0bfb2;
+            font-weight: 350;
+        }
+
+        .greeting {
+            font-size: 1.2rem;
+            margin: 1.2rem 0 1.6rem 0;
+            color: #4a3f3b;
+            font-weight: 400;
+            border-bottom: 1px solid #ebdbd4;
+            padding-bottom: 1rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-weight: 350;
+            color: #3d3532;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 1.8rem;
+            margin: 1.6rem 0 1.2rem 0;
+            background: #fffaf6;
+            padding: 1.2rem 1.4rem;
+            border-radius: 28px;
+            border: 1px solid #f2e3db;
+        }
+
+        @media (max-width: 500px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+            }
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            padding: 0.4rem 0;
+        }
+
+        .feature-marker {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #dbaa96;
+            border-radius: 50%;
+            margin-top: 0.55rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 2px #f3ded4;
+        }
+
+        .feature-item span {
+            font-size: 0.96rem;
+            color: #3f3633;
+        }
+
+        .story-note {
+            background: #fcf4ef;
+            padding: 1.2rem 1.6rem;
+            border-radius: 28px;
+            margin: 1.4rem 0 1.2rem 0;
+            border-left: 5px solid #c6897a;
+            font-style: normal;
+            color: #3d3430;
+        }
+
+        .story-note p {
+            margin-bottom: 0.4rem;
+        }
+
+        .faq-mini {
+            margin: 1.6rem 0 1.2rem 0;
+            background: #ffffffd6;
+            padding: 1.2rem 1.6rem;
+            border-radius: 28px;
+            border: 1px solid #f1ddd4;
+            box-shadow: inset 0 1px 4px rgba(200, 150, 130, 0.05);
+        }
+
+        .faq-mini summary {
+            cursor: default;
+            font-weight: 500;
+            color: #5f4b44;
+            padding: 0.2rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .faq-mini summary::before {
+            content: "▹";
+            color: #b9816f;
+            font-size: 1.2rem;
+        }
+
+        .faq-mini p {
+            margin: 0.5rem 0 0 1.2rem;
+            font-size: 0.93rem;
+            color: #4e423e;
+        }
+
+        .gentle-close {
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #edd9d0;
+            text-align: left;
+            color: #554a45;
+            font-size: 1rem;
+        }
+
+        .gentle-close a {
+            color: #9f6758;
+            background: transparent;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1.5px dashed #cfa292;
+            padding-bottom: 1px;
+            transition: border 0.2s, color 0.2s;
+            border-radius: 0;
+        }
+
+        .gentle-close a:hover {
+            color: #7a4e40;
+            border-bottom-style: solid;
+            border-bottom-color: #9f6758;
+        }
+
+        .round-link {
+            display: inline-block;
+            background: #f0dbd2;
+            color: #3f2f2a;
+            padding: 0.2rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 420;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: 1px solid #e4c9bd;
+            transition: background 0.2s, box-shadow 0.2s;
+            margin: 0 0.2rem;
+            white-space: nowrap;
+        }
+
+        .round-link:hover {
+            background: #e5c8bb;
+            box-shadow: 0 2px 8px rgba(160, 100, 80, 0.06);
+        }
+
+        .dot-sep {
+            color: #ccb3a8;
+            margin: 0 0.3rem;
+            font-weight: 200;
+        }
+
+        .footnote {
+            margin-top: 2.4rem;
+            font-size: 0.85rem;
+            color: #8f7b73;
+            text-align: center;
+            border-top: 1px solid #f0e0d8;
+            padding-top: 1.2rem;
+        }
+
+        .inline-link-text {
+            color: #9f6758;
+            text-decoration: none;
+            border-bottom: 1px solid #dbb9ae;
+            transition: border-color 0.15s;
+        }
+
+        .inline-link-text:hover {
+            border-bottom-color: #7a4e40;
+        }
+
+        .small-meta {
+            font-size: 0.85rem;
+            color: #b0968d;
+            letter-spacing: 0.3px;
+            margin-top: 0.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- 开场短句 -->
+        <div class="hero-line">又见面了。</div>
+        <div class="hero-sub">一些熟悉感，一点新发现。</div>
+
+        <!-- 承接段落：再次访问与收藏的视角 -->
+        <div class="greeting">
+            <span>👋 或许你曾来过</span>
+            <span class="dot-sep">·</span>
+            <span>或许只是恰好读到</span>
+        </div>
+
+        <p>
+            有些页面，你放在书签里，很久才点开一次。不是忘记了，而是等着某个安静的瞬间，重新看一看它有没有变化。
+            对我来说，<a href="https://indexwap-igame.com" class="inline-link-text">爱游戏</a> 就是这样一个地方。没有太多的推送和提醒，它就在那里，像一个偶尔翻开的笔记本。
+        </p>
+
+        <p>
+            这次回来，页面还是干净的，条目清晰，加载也快。收藏夹里的链接依然有效——这听起来很基本，但许多网站做不到。
+            或许你也习惯把喜欢的页面留在标签栏里，隔一段时间再打开，像是跟一位老朋友打招呼：嘿，我又来了。
+        </p>
+
+        <!-- 特点列表 -->
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="feature-marker"></span>
+                <span>目录清晰，没有冗余的弹窗或浮层</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-marker"></span>
+                <span>内容更新有规律，节奏不急促</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-marker"></span>
+                <span>链接稳定，收藏后不易失效</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-marker"></span>
+                <span>界面亲和，适合慢慢浏览</span>
+            </div>
+        </div>
+
+        <!-- 温和场景描述 -->
+        <div class="story-note">
+            <p>上周整理书签，看到之前存下的链接，顺手点进去。页面没怎么变，但那种“还在”的感觉很踏实。</p>
+            <p>没有突然跳出的通知，没有诱导注册的横幅，只是安静地展示着内容。对于只想要浏览的人来说，这本身就是一种体贴。</p>
+        </div>
+
+        <!-- FAQ 摘要（轻量） -->
+        <div class="faq-mini">
+            <details>
+                <summary>如果忘了之前看到哪里……</summary>
+                <p>页面结构比较直观，通常从导航栏就能回到主要区域。也可以直接搜索关键词，或者重新浏览最近更新的部分。</p>
+            </details>
+            <details>
+                <summary>如何把页面保留在收藏夹？</summary>
+                <p>浏览器的书签栏或收藏夹都可以。保存后，下次直接点击就能回到这里，不需要再次搜索。</p>
+            </details>
+        </div>
+
+        <!-- 温和结尾 + 自然嵌入链接（严格满足 a 标签可见文本 = "爱游戏"） -->
+        <div class="gentle-close">
+            <p>如果你也喜欢把合心意的页面留着，不妨把 <a href="https://indexwap-igame.com">爱游戏</a> 收进书签。
+            <span style="display: inline-block; margin-left: 0.2rem;">下次想起时，打开就好。</span></p>
+            <p style="margin-top: 0.8rem; font-size: 0.95rem; color: #5b4b45;">
+            不需要记住网址，不需要每次重新搜索——书签就是最好的便签。
+            </p>
+        </div>
+
+        <!-- 一个额外的圆角链接（也是指向爱游戏，但主体句子已嵌入） -->
+        <p style="margin-top: 1.2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem;">
+            <span style="color: #655853;">慢慢看，没关系的。</span>
+            <a href="https://indexwap-igame.com" class="round-link">爱游戏</a>
+            <span class="small-meta">· 书签友好</span>
+        </p>
+
+        <div class="footnote">
+            <span>页面内容安静呈现 · 适合收藏与回看</span>
+        </div>
+    </div>
+</body>
+</html>
